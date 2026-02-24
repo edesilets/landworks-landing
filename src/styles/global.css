@@ -139,6 +139,7 @@ blockquote {
 	margin: 0px;
 	font-size: 1.333em;
 }
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
@@ -148,6 +149,7 @@ hr {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 2em;
 }
 
 .icon a:hover {
@@ -162,6 +164,7 @@ hr {
 	body {
 		font-size: 18px;
 	}
+
 	main {
 		padding: 1em;
 	}
