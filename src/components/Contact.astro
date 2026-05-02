@@ -1,0 +1,149 @@
+---
+---
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow contact-eyebrow">Get In Touch</div>
+      <h2 class="contact-title">Contact Us<br />for a Quote</h2>
+      <p class="contact-sub">Ready to get started? Reach out by phone or email and we'll get back to you promptly with a free estimate.</p>
+    </div>
+
+    <div>
+      <div class="contact-items">
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <a href="tel:5089667135" class="contact-item-value">(508) 966-7135</a>
+        </div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <a href="mailto:chad@desiletslandworks.com" class="contact-item-value email">chad@desiletslandworks.com</a>
+        </div>
+        <div>
+          <div class="contact-item-label">Location</div>
+          <div class="contact-item-value no-link">Bellingham, Massachusetts</div>
+        </div>
+      </div>
+
+      <div class="cta-card">
+        <div class="cta-card-title">Ready to Start?</div>
+        <p class="cta-card-body">Call or email today for a no-obligation quote. We respond quickly and are happy to visit your site.</p>
+        <a href="tel:5089667135" class="cta-card-btn">Call Now: (508) 966-7135</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: var(--navy);
+    padding: 96px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0d1c35 0%, #162747 50%, #1e3256 100%);
+    z-index: 0;
+  }
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-eyebrow {
+    color: var(--amber) !important;
+  }
+  .contact-eyebrow::before {
+    background: var(--amber) !important;
+  }
+
+  .contact-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    letter-spacing: 0.03em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .contact-sub {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.52);
+    max-width: 380px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .contact-item-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 5px;
+  }
+  .contact-item-value {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+  }
+  a.contact-item-value:hover { color: var(--amber); }
+  .contact-item-value.email {
+    font-size: 0.98rem;
+    font-weight: 400;
+    word-break: break-all;
+  }
+  .contact-item-value.no-link { cursor: default; }
+
+  .cta-card {
+    margin-top: 40px;
+    background: var(--amber);
+    padding: 36px 40px;
+    border-radius: 2px;
+  }
+  .cta-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .cta-card-body {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #3a2a0e;
+    margin-bottom: 22px;
+  }
+  .cta-card-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-card-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+  @media (max-width: 900px) {
+    .contact { padding: 72px 24px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  }
+</style>

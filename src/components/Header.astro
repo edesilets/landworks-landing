@@ -1,54 +1,163 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-		</div>
-	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		/* background: white; */
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+<nav id="main-nav">
+  <!-- <img src="/Desilets-Graphic.svg" alt="Desilets Landworks" class="nav-logo-img" /> -->
+  <div class="nav-right">
+    <!-- <a href="tel:5089667135" class="nav-phone">(508) 966-7135</a> -->
+    <!-- <a href="#contact" class="nav-cta">Get a Quote</a> -->
+    <button class="nav-burger" id="burger-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" id="mobile-services">Services</a>
+  <a href="#about" id="mobile-about">About</a>
+  <a href="tel:5089667135">(508) 966-7135</a>
+  <a href="mailto:chad@desiletslandworks.com">chad@desiletslandworks.com</a>
+  <a href="#contact" id="mobile-cta-link" class="mobile-cta">Get a Free Quote</a>
+</div>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: transparent;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  nav.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 32px rgba(0,0,0,0.4);
+  }
+  .nav-logo-img {
+    height: 48px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-phone {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-phone:hover { color: var(--amber); }
+  .nav-cta {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--white); transform: translateY(-1px); }
+
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--navy);
+    z-index: 199;
+    padding: 24px 24px 32px;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--amber); }
+  .mobile-menu .mobile-cta {
+    margin-top: 20px;
+    text-align: center;
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px;
+    border-radius: 2px;
+    border-bottom: none;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-phone { display: none; }
+    .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+  }
 </style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const burger = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  burger?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('open');
+  });
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.remove('open');
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!burger?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      closeMobileMenu();
+    }
+  });
+
+  document.getElementById('mobile-services')?.addEventListener('click', closeMobileMenu);
+  document.getElementById('mobile-about')?.addEventListener('click', closeMobileMenu);
+  document.getElementById('mobile-cta-link')?.addEventListener('click', closeMobileMenu);
+</script>

@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "Desilets Landworks";
-export const SITE_DESCRIPTION = "Welcome to Desilets Landworks";
+export const SITE_DESCRIPTION = "Expert land clearing, site prep, snow removal, and material delivery in Bellingham, Massachusetts.";

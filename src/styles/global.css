@@ -1,20 +1,73 @@
 @import "tailwindcss";
 
+/* ── TOKENS ── */
 :root {
-	--black: rgba(27, 30, 36, 1);
-	--white: #ffffffff;
-	--orange: #ff7b00;
-	--primary-color: var(--black);
-	--secondary-color: var(--orange);
-	--accent: var(--orange);
-	--text-primary: var(--white);
-	--text-secondary: var(--orange);
+  --navy:        #162747;
+  --navy-mid:    #1e3560;
+  --rust:        #cf5e4f;
+  --amber:       #ef9f44;
+  --amber-dim:   #c17038;
+  --brown-dark:  #4b372f;
+  --brown-mid:   #9a6947;
+  --cream:       #f7f3ed;
+  --cream-2:     #ede8df;
+  --text-dark:   #1a1510;
+  --text-mid:    #4a3f35;
+  --white:       #ffffff;
 }
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
-	background-color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
 }
 
-main {
-	color: var(--white);
+/* ── SHARED SECTION UTILITIES ── */
+.section-header {
+  max-width: 1200px;
+  margin: 0 auto 56px;
 }
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber-dim);
+  margin-bottom: 14px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--amber-dim);
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  letter-spacing: 0.03em;
+  color: var(--navy);
+  line-height: 1;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.d1 { animation-delay: 0.08s; }
+.d2 { animation-delay: 0.2s; }
+.d3 { animation-delay: 0.34s; }
+.d4 { animation-delay: 0.48s; }
+.d5 { animation-delay: 0.62s; }

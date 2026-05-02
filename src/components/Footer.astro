@@ -1,32 +1,33 @@
 ---
-const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Chad Desilets. All rights reserved.
-		<div class="social-links">
-			<a href="https://www.instagram.com/desiletslandworks/" target="_blank">Instagram</a>
-			<a href="https://www.facebook.com/DesiletsLandworks/" target="_blank">Facebook</a>
-		</div>
+  <img src="/Desilets-Graphic.svg" alt="Desilets Landworks" class="footer-logo" />
+  <div class="footer-copy">© 2026 Desilets Landworks LLC · Bellingham, MA · All rights reserved</div>
 </footer>
+
 <style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+  footer {
+    background: #0d1c35;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-logo {
+    height: 32px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.4;
+  }
+  .footer-copy {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.28);
+  }
+
+  @media (max-width: 900px) {
+    footer { padding: 24px; }
+  }
 </style>
