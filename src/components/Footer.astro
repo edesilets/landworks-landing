@@ -3,7 +3,7 @@
 
 <footer>
   <img src="/Desilets-Graphic.svg" alt="Desilets Landworks" class="footer-logo" />
-  <div class="footer-copy">© 2026 Desilets Landworks LLC · Bellingham, MA · All rights reserved</div>
+  <div class="footer-copy">© 2026 Desilets Landworks LLC · Bellingham, MA · All rights reserved · <a href="/privacy-policy">Privacy Policy</a></div>
 </footer>
 
 <style>
@@ -26,6 +26,12 @@
     font-size: 0.76rem;
     color: rgba(255,255,255,0.28);
   }
+  .footer-copy a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-copy a:hover { color: var(--amber); }
 
   @media (max-width: 900px) {
     footer { padding: 24px; }

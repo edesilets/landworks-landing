@@ -1,0 +1,148 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Privacy Policy | ${SITE_TITLE}`}
+      description="How Desilets Landworks, LLC collects, uses, and protects your personal information."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="policy-hero">
+        <div class="policy-inner">
+          <div class="section-eyebrow">Desilets Landworks, LLC</div>
+          <h1 class="policy-title">Privacy Policy</h1>
+          <p class="policy-date">Effective Date: November 13, 2026</p>
+        </div>
+      </section>
+
+      <section class="policy-body">
+        <div class="policy-inner">
+          <p>Desilets Landworks, LLC, based in Bellingham, Massachusetts, respects your privacy and is committed to protecting the personal information you provide.</p>
+
+          <h2>Information We Collect</h2>
+          <p>When you request an estimate or contact our business, we may collect:</p>
+          <ul>
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Property address</li>
+            <li>Requested services</li>
+            <li>Information you voluntarily provide regarding your property or project</li>
+          </ul>
+
+          <h2>How We Use Your Information</h2>
+          <p>We use this information to:</p>
+          <ul>
+            <li>Respond to inquiries and provide estimates</li>
+            <li>Contact you regarding requested services</li>
+            <li>Schedule and perform services</li>
+            <li>Communicate about service updates, appointments, and billing</li>
+            <li>Maintain business records</li>
+          </ul>
+
+          <h2>Information Sharing</h2>
+          <p>We do not sell your personal information. We may share information with service providers when necessary to operate our business, or when required by law.</p>
+
+          <h2>Facebook and Instagram Lead Forms</h2>
+          <p>When you submit information through our Facebook or Instagram advertisements, we receive the information you provide and use it to respond to your inquiry.</p>
+          <p>Submitting a request for an estimate does not automatically enroll you in recurring promotional text messages or emails.</p>
+
+          <h2>Data Security and Retention</h2>
+          <p>We take reasonable measures to protect personal information against unauthorized access, loss, or misuse.</p>
+          <p>We retain information as reasonably necessary to provide services, maintain business records, and comply with legal obligations.</p>
+
+          <h2>Your Privacy Choices</h2>
+          <p>You may contact us to request access to, correction of, or deletion of your personal information, subject to applicable legal and business recordkeeping requirements.</p>
+
+          <h2>Contact Us</h2>
+          <address>
+            Desilets Landworks, LLC<br />
+            Bellingham, Massachusetts<br />
+            Phone: <a href="tel:5089667135">508-966-7135</a><br />
+            Website: <a href="/">DesiletsLandworks.com</a>
+          </address>
+          <p>For privacy-related questions or requests, please contact us using the information above.</p>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .policy-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .policy-hero {
+    background: var(--navy);
+    padding: 136px 48px 64px;
+  }
+  .policy-hero .section-eyebrow { color: var(--amber); }
+  .policy-hero .section-eyebrow::before { background: var(--amber); }
+  .policy-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    letter-spacing: 0.03em;
+    color: var(--white);
+    line-height: 1;
+    font-weight: 400;
+  }
+  .policy-date {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .policy-body {
+    padding: 64px 48px 96px;
+  }
+  .policy-body h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--navy);
+    line-height: 1.1;
+    margin: 44px 0 14px;
+  }
+  .policy-body p,
+  .policy-body li,
+  .policy-body address {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+  .policy-body p { margin-bottom: 14px; }
+  .policy-body ul {
+    list-style: disc;
+    padding-left: 22px;
+    margin-bottom: 14px;
+  }
+  .policy-body li::marker { color: var(--amber-dim); }
+  .policy-body address {
+    font-style: normal;
+    margin-bottom: 18px;
+  }
+  .policy-body a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration-color: var(--amber);
+    text-underline-offset: 3px;
+  }
+  .policy-body a:hover { color: var(--amber-dim); }
+
+  @media (max-width: 900px) {
+    .policy-hero { padding: 112px 24px 48px; }
+    .policy-body { padding: 48px 24px 72px; }
+  }
+</style>
